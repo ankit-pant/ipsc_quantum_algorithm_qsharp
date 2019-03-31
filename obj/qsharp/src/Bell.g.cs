@@ -109,6 +109,12 @@ namespace Quantum.Bell
             set;
         }
 
+        protected IUnitary<Qubit> MicrosoftQuantumPrimitiveH
+        {
+            get;
+            set;
+        }
+
         protected ICallable<Qubit, Result> M
         {
             get;
@@ -147,16 +153,18 @@ namespace Quantum.Bell
 #line 20 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                         Set.Apply((initial, qubit));
 #line 22 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                        MicrosoftQuantumPrimitiveH.Apply(qubit);
+#line 23 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                         var res = M.Apply(qubit);
-#line 25 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+#line 26 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                         if ((res == Result.One))
                         {
-#line 27 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+#line 28 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                             numOnes = (numOnes + 1L);
                         }
                     }
 
-#line 30 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+#line 31 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                     Set.Apply((Result.Zero, qubit));
                 }
 #line hidden
@@ -178,7 +186,7 @@ namespace Quantum.Bell
                 }
             }
 
-#line 34 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+#line 35 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
             return ((count - numOnes), numOnes);
         }
 
@@ -186,6 +194,7 @@ namespace Quantum.Bell
         public override void Init()
         {
             this.Allocate = this.Factory.Get<Allocate>(typeof(Microsoft.Quantum.Primitive.Allocate));
+            this.MicrosoftQuantumPrimitiveH = this.Factory.Get<IUnitary<Qubit>>(typeof(Microsoft.Quantum.Primitive.H));
             this.M = this.Factory.Get<ICallable<Qubit, Result>>(typeof(Microsoft.Quantum.Primitive.M));
             this.Release = this.Factory.Get<Release>(typeof(Microsoft.Quantum.Primitive.Release));
             this.Set = this.Factory.Get<ICallable<(Result,Qubit), QVoid>>(typeof(Set));
