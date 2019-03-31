@@ -6,7 +6,7 @@ using Microsoft.Quantum.Simulation.Core;
 
 [assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"Quantum.Bell\",\"Name\":\"Set\"},\"SourceFile\":\"/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs\",\"Position\":{\"Item1\":5,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":14}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"desired\"]},\"Type\":{\"Case\":\"Result\"},\"IsMutable\":false,\"HasLocalQuantumDependency\":false,\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":16},\"Item2\":{\"Line\":1,\"Column\":23}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"q1\"]},\"Type\":{\"Case\":\"Qubit\"},\"IsMutable\":false,\"HasLocalQuantumDependency\":false,\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":33},\"Item2\":{\"Line\":1,\"Column\":35}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Result\"},{\"Case\":\"Qubit\"}]]},\"ReturnType\":{\"Case\":\"UnitType\"},\"SupportedFunctors\":[]},\"Documentation\":[]}")]
 [assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"Parent\":{\"Namespace\":\"Quantum.Bell\",\"Name\":\"Set\"},\"SourceFile\":\"/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs\",\"Position\":{\"Item1\":5,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":14}},\"Documentation\":[]}")]
-[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"Quantum.Bell\",\"Name\":\"BellTest\"},\"SourceFile\":\"/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs\",\"Position\":{\"Item1\":12,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":19}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"count\"]},\"Type\":{\"Case\":\"Int\"},\"IsMutable\":false,\"HasLocalQuantumDependency\":false,\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":21},\"Item2\":{\"Line\":1,\"Column\":26}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"initial\"]},\"Type\":{\"Case\":\"Result\"},\"IsMutable\":false,\"HasLocalQuantumDependency\":false,\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":34},\"Item2\":{\"Line\":1,\"Column\":41}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Result\"}]]},\"ReturnType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Int\"}]]},\"SupportedFunctors\":[]},\"Documentation\":[]}")]
+[assembly: CallableDeclaration("{\"Kind\":{\"Case\":\"Operation\"},\"QualifiedName\":{\"Namespace\":\"Quantum.Bell\",\"Name\":\"BellTest\"},\"SourceFile\":\"/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs\",\"Position\":{\"Item1\":12,\"Item2\":4},\"SymbolRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":19}},\"ArgumentTuple\":{\"Case\":\"QsTuple\",\"Fields\":[[{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"count\"]},\"Type\":{\"Case\":\"Int\"},\"IsMutable\":false,\"HasLocalQuantumDependency\":false,\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":21},\"Item2\":{\"Line\":1,\"Column\":26}}}]},{\"Case\":\"QsTupleItem\",\"Fields\":[{\"VariableName\":{\"Case\":\"ValidName\",\"Fields\":[\"initial\"]},\"Type\":{\"Case\":\"Result\"},\"IsMutable\":false,\"HasLocalQuantumDependency\":false,\"Position\":{\"Case\":\"Null\"},\"Range\":{\"Item1\":{\"Line\":1,\"Column\":34},\"Item2\":{\"Line\":1,\"Column\":41}}}]}]]},\"Signature\":{\"TypeParameters\":[],\"ArgumentType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Result\"}]]},\"ReturnType\":{\"Case\":\"TupleType\",\"Fields\":[[{\"Case\":\"Int\"},{\"Case\":\"Int\"},{\"Case\":\"Int\"}]]},\"SupportedFunctors\":[]},\"Documentation\":[]}")]
 [assembly: SpecializationDeclaration("{\"Kind\":{\"Case\":\"QsBody\"},\"Parent\":{\"Namespace\":\"Quantum.Bell\",\"Name\":\"BellTest\"},\"SourceFile\":\"/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs\",\"Position\":{\"Item1\":12,\"Item2\":4},\"HeaderRange\":{\"Item1\":{\"Line\":1,\"Column\":11},\"Item2\":{\"Line\":1,\"Column\":19}},\"Documentation\":[]}")]
 #line hidden
 namespace Quantum.Bell
@@ -77,7 +77,7 @@ namespace Quantum.Bell
         }
     }
 
-    public class BellTest : Operation<(Int64,Result), (Int64,Int64)>, ICallable
+    public class BellTest : Operation<(Int64,Result), (Int64,Int64,Int64)>, ICallable
     {
         public BellTest(IOperationFactory m) : base(m)
         {
@@ -92,9 +92,9 @@ namespace Quantum.Bell
             System.Collections.Generic.IEnumerable<Qubit> IApplyData.Qubits => null;
         }
 
-        public class Out : QTuple<(Int64,Int64)>, IApplyData
+        public class Out : QTuple<(Int64,Int64,Int64)>, IApplyData
         {
-            public Out((Int64,Int64) data) : base(data)
+            public Out((Int64,Int64,Int64) data) : base(data)
             {
             }
 
@@ -104,6 +104,12 @@ namespace Quantum.Bell
         String ICallable.Name => "BellTest";
         String ICallable.FullName => "Quantum.Bell.BellTest";
         protected Allocate Allocate
+        {
+            get;
+            set;
+        }
+
+        protected IUnitary<(Qubit,Qubit)> MicrosoftQuantumPrimitiveCNOT
         {
             get;
             set;
@@ -133,39 +139,54 @@ namespace Quantum.Bell
             set;
         }
 
-        public override Func<(Int64,Result), (Int64,Int64)> Body => (__in__) =>
+        public override Func<(Int64,Result), (Int64,Int64,Int64)> Body => (__in__) =>
         {
             var (count,initial) = __in__;
 #line 15 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
             var numOnes = 0L;
+#line 16 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+            var agree = 0L;
 #line hidden
             {
-#line 16 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
-                var qubit = Allocate.Apply();
+#line 17 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                var qubits = Allocate.Apply(2L);
 #line hidden
                 Exception __arg1__ = null;
                 try
                 {
-#line 18 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+#line 19 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                     foreach (var test in new Range(1L, count))
 #line hidden
                     {
-#line 20 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
-                        Set.Apply((initial, qubit));
+#line 21 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                        Set.Apply((initial, qubits[0L]));
 #line 22 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
-                        MicrosoftQuantumPrimitiveH.Apply(qubit);
-#line 23 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
-                        var res = M.Apply(qubit);
+                        Set.Apply((Result.Zero, qubits[1L]));
+#line 24 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                        MicrosoftQuantumPrimitiveH.Apply(qubits[0L]);
+#line 25 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                        MicrosoftQuantumPrimitiveCNOT.Apply((qubits[0L], qubits[1L]));
 #line 26 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                        var res = M.Apply(qubits[0L]);
+#line 28 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                        if ((M.Apply(qubits[1L]) == res))
+                        {
+#line 30 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                            agree = (agree + 1L);
+                        }
+
+#line 34 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                         if ((res == Result.One))
                         {
-#line 28 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+#line 36 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
                             numOnes = (numOnes + 1L);
                         }
                     }
 
-#line 31 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
-                    Set.Apply((Result.Zero, qubit));
+#line 39 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                    Set.Apply((Result.Zero, qubits[0L]));
+#line 40 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+                    Set.Apply((Result.Zero, qubits[1L]));
                 }
 #line hidden
                 catch (Exception __arg2__)
@@ -182,18 +203,19 @@ namespace Quantum.Bell
                     }
 
 #line hidden
-                    Release.Apply(qubit);
+                    Release.Apply(qubits);
                 }
             }
 
-#line 35 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
-            return ((count - numOnes), numOnes);
+#line 44 "/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Bell.qs"
+            return ((count - numOnes), numOnes, agree);
         }
 
         ;
         public override void Init()
         {
             this.Allocate = this.Factory.Get<Allocate>(typeof(Microsoft.Quantum.Primitive.Allocate));
+            this.MicrosoftQuantumPrimitiveCNOT = this.Factory.Get<IUnitary<(Qubit,Qubit)>>(typeof(Microsoft.Quantum.Primitive.CNOT));
             this.MicrosoftQuantumPrimitiveH = this.Factory.Get<IUnitary<Qubit>>(typeof(Microsoft.Quantum.Primitive.H));
             this.M = this.Factory.Get<ICallable<Qubit, Result>>(typeof(Microsoft.Quantum.Primitive.M));
             this.Release = this.Factory.Get<Release>(typeof(Microsoft.Quantum.Primitive.Release));
@@ -201,10 +223,10 @@ namespace Quantum.Bell
         }
 
         public override IApplyData __dataIn((Int64,Result) data) => new In(data);
-        public override IApplyData __dataOut((Int64,Int64) data) => new Out(data);
-        public static System.Threading.Tasks.Task<(Int64,Int64)> Run(IOperationFactory __m__, Int64 count, Result initial)
+        public override IApplyData __dataOut((Int64,Int64,Int64) data) => new Out(data);
+        public static System.Threading.Tasks.Task<(Int64,Int64,Int64)> Run(IOperationFactory __m__, Int64 count, Result initial)
         {
-            return __m__.Run<BellTest, (Int64,Result), (Int64,Int64)>((count, initial));
+            return __m__.Run<BellTest, (Int64,Result), (Int64,Int64,Int64)>((count, initial));
         }
     }
 }
