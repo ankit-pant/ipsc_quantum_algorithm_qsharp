@@ -1,0 +1,131 @@
+\documentclass[]{article}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+\hypersetup{
+	colorlinks   = true,    % Colours links instead of ugly boxes
+	urlcolor     = blue,    % Colour for external hyperlinks
+	linkcolor    = black,    % Colour of internal links
+	citecolor    = red      % Colour of citations
+}
+
+%opening
+\title{{\huge Project Progress Report} \newline \newline Introduction to Parallel Scientific Computing  \newline \newline {\large Implement/Simulate a Quantum Algorithm using \\Microsoft Quantum Development Kit}}
+\author{ Ankit Pant -- 2018201035 \\ Tarun Mohandas -- 2018201008}
+\date{Submitted on: 2 April 2019}
+
+\begin{document}
+
+	\maketitle
+	\newpage
+	
+	\begin{abstract}
+		The project involves implementing/simulating a quantum algorithm using Microsoft Quantum Development Kit. Quantum Computing is an exciting area of research with the promise of changing the computing world dramatically. Quantum Algorithms use properties of quantum system (e.g. superposition) and can in principle run exponentially faster than their classical counterparts.
+		\newline
+		The project involves getting familiar with Microsoft's Quantum Development Kit and use it to implement a Quantum Algorithm. The working environment will be Linux.
+		\\
+		\textit{\textbf{keywords:} quantum algorithm, Quantum Development Kit, computing}
+	\end{abstract}
+	
+	\newpage
+	\tableofcontents
+	\newpage
+	
+	\section{Progress Summary}
+		Implementing a quantum algorithm on Microsoft Quantum Development Kit involves the following pre-requisites:
+		\begin{itemize}
+			\item A quick revision of the basic concepts of Quantum Mechanics
+			\item Understanding basics  of quantum computing and quantum gates
+			\item Familiarization with Microsoft Q\# Development Kit
+			\item Understanding basic quantum algorithms \\
+		\end{itemize}
+		
+		The progress made so far is summarised in the subsections that follow.
+		
+		\subsection{Studying basic Quantum Mechanics concepts }
+			A quick revision of the basic concepts of quantum mechanics like superposition, entanglement, etc. was studied. It also involved revision of Linear Algebra (Vectors, Matrices, Tensors, etc.) \cite{1}.
+			
+		\subsection{Studying basic quantum Gates}
+			Quantum gates, like the transistor gates of the classical computers, are vital to quantum computing. It is imperative to have a basic understanding of quantum gates and quantum circuits to be able to effectively implement quantum algorithms.  Some of the quantum gates explored were \cite{1}:
+			\begin{itemize}
+				\item \textbf{Hadamard Gate:} It applies the Hadamard Transformation to a single qubit. The Hadamard Transformation is defined as:
+					\[ 	H:= \frac{1}{\sqrt{2}} 
+						\begin{bmatrix}
+						1 & 1 \\
+						1 & -1\\
+						\end{bmatrix}
+					\] 
+				\item \textbf{CNOT:} It applies a controlled not to a pair of qubits and creates a maximally entangled two-qubit state. It is defined as:
+					\[ 	CNOT:= 
+					\begin{bmatrix}
+					1 & 0 & 0 & 0 \\
+					0 & 1 & 0 & 0 \\
+					0 & 0 & 0 & 1 \\
+					0 & 0 & 1 & 0 \\
+					\end{bmatrix}
+					\] 
+			\end{itemize}
+		
+		\subsection{Setting up Q\# Environment}
+			The Q\# environment was set up in Linux. The following steps were involved:
+			\begin{enumerate}
+				\item Installing the .NET sdk and runtime \cite{2}
+				\item Installing IQ\# : It was done using the command:
+					\begin{verbatim}
+					dotnet tool install -g Microsoft.Quantum.IQSharp
+					\end{verbatim}
+				\item Installing Q\# templates:  It was done using the command:
+				\begin{verbatim}
+				dotnet new -i Microsoft.Quantum.ProjectTemplates
+				\end{verbatim}
+				\item Installing Q\# kernel for python and jupyter notebook interfacing (Optional). It was done using the command:
+				\begin{verbatim}
+				dotnet iqsharp install
+				\end{verbatim}
+				\textbf{Note:} At the present time there is some issue with the installation of the Q\# kernel for python in Manjaro Linux and hence was not possible. Hopefully it will be resolved soon.
+			\end{enumerate}
+		
+		\subsection{Running Sample Programs}
+			Some sample programs (provided by Microsoft)  were run to ensure that the environment is set up correctly. The following are the screenshots of the execution of Sample Quantum programs.
+			\begin{figure}[H]
+				\begin{center}
+					\includegraphics[height=4cm,width=6cm]{Teleportation}
+				\end{center}
+				\caption{Teleportation Sample}
+			\end{figure}
+				\begin{figure}[H]
+				\begin{center}
+					\includegraphics[width=7cm]{Game}
+				\end{center}
+				\caption{Classical vs Quantum Sample}
+			\end{figure}
+		
+		\subsection{Implementing Basic Quantum Programs}
+			Two basic Quantum Programs were implemented. One was the basic "Hello World" program and the other was entangling two qubits and performing measurements on them. The code repository can be found  \href{https://github.com/ankit-pant/ipsc_quantum_algorithm_qsharp} {here} (\textbf{Note:} You need to be logged into GitHub to be able to view the page. The code is in \emph{test\_Q\#\_environment} branch). The output of the entanglement program was:
+				\begin{figure}[H]
+				\begin{center}
+					\includegraphics[width=7cm]{entanglement}
+				\end{center}
+				\caption{Entanglement program}
+			\end{figure}
+	
+	\section{Future Work}
+		The following things are being worked on towards the completion of the project:
+		\begin{enumerate}
+			\item Exploring and studying various quantum algorithms
+			\item Selecting a quantum algorithm to implement
+			\item Fix issue with qsharp kernel for python to be able to use jupyter notebooks to present the code interactively
+		\end{enumerate}
+		As the team makes progress with the project, additional things would be added/implemented.
+			
+	
+	\begin{thebibliography}{5}
+		\bibitem{1} Quantum Computing Concepts -- Microsoft Quantum Development Kit Preview, \url{https://docs.microsoft.com/en-us/quantum/concepts/?view=qsharp-preview}
+		\bibitem{2} Microsoft .NET, \url{https://dotnet.microsoft.com/}
+	\end{thebibliography}
+			
+	
+
+\end{document}
