@@ -1,0 +1,11 @@
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/obj/Debug/netcoreapp2.0/Quantum_Factorization.csprojAssemblyReference.cache
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/obj/Debug/netcoreapp2.0/Quantum_Factorization.csproj.CoreCompileInputs.cache
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/obj/Debug/netcoreapp2.0/Quantum_Factorization.AssemblyInfoInputs.cache
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/obj/Debug/netcoreapp2.0/Quantum_Factorization.AssemblyInfo.cs
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/bin/Debug/netcoreapp2.0/Quantum_Factorization.deps.json
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/bin/Debug/netcoreapp2.0/Quantum_Factorization.runtimeconfig.json
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/bin/Debug/netcoreapp2.0/Quantum_Factorization.runtimeconfig.dev.json
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/bin/Debug/netcoreapp2.0/Quantum_Factorization.dll
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/bin/Debug/netcoreapp2.0/Quantum_Factorization.pdb
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/obj/Debug/netcoreapp2.0/Quantum_Factorization.dll
+/home/maven/Sem_II/IPSC/Project/Repository/ipsc_quantum_algorithm_qsharp/Quantum_Factorization/obj/Debug/netcoreapp2.0/Quantum_Factorization.pdb
