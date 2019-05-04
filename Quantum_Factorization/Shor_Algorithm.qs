@@ -3,7 +3,9 @@
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Primitive;
 
-    operation find_Period () : Unit {
-        Message("Hello quantum world!");
+    operation find_Period () : Int {
+        Message("Performing Quantum Operations!");
+        mutable result = 2;
+        return result;
     }
 }
